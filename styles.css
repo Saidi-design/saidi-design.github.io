@@ -367,6 +367,93 @@ hr {
 }
 
 /*
+ * PROJECT STATS CARDS (DATA DIFFERENTIATOR)
+ */
+.project-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-top: 25px;
+    padding: 10px 0;
+    border-top: 1px dashed #e0e0e0; /* Mistari midogo ya kutenganisha */
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1; /* Kuhakikisha zinajaza nafasi sawa */
+    padding: 8px 5px;
+    border-right: 1px solid #f0f0f0; /* Mistari wima ya kugawanya */
+}
+
+/* Ondoa mstari wa mwisho wima */
+.stat-item:last-child {
+    border-right: none;
+}
+
+.stat-item i {
+    color: #3f51b5; /* Rangi ya ikoni */
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+
+.stat-item span {
+    font-size: 0.8em;
+    color: #757575;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.stat-item b {
+    font-size: 1em;
+    color: #212121;
+    font-weight: 700;
+}
+
+
+/*
+ * GUARANTEE/DIFFERENTIATOR SECTION STYLES
+ */
+.guarantee-section {
+    background-color: #e8eaf6; /* Rangi ya soft bluu ili kuvutia macho */
+    padding: 60px 0;
+}
+
+.guarantee-section h2 {
+    color: var(--secondary-color);
+}
+
+.guarantee-box {
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    border-top: 5px solid #4CAF50; /* Mpaka wa kijani kibichi */
+}
+
+.guarantee-box h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.6em;
+}
+
+.guarantee-box p {
+    font-size: 1.1em;
+    line-height: 1.8;
+}
+
+/* Kurekebisha subtitle ya Guarantee */
+.guarantee-section .subtitle {
+    font-weight: 500;
+    color: #444;
+}
+
+/*
  * FOOTER (CONTACT)
  */
 .footer {
@@ -416,106 +503,59 @@ hr {
     opacity: 0.7;
 }
 
-
 /*
- * BLOG SECTION STYLES
+ * ANIMATED TEXT SECTION STYLES (NEW!)
  */
-.blog-section {
-    padding: 60px 0;
-    text-align: left;
-}
-
-.blog-section h1 {
-    font-size: 2.5em;
-    color: var(--primary-color);
-    margin-bottom: 20px;
+.jua.kuusu.lexon.company {
+    background-color: #212121; /* Dark background ili rangi ionekane vizuri */
+    color: white;
+    padding: 40px 0;
     text-align: center;
 }
 
-.blog-list {
+.jua.kuusu.lexon.company h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: white; /* Title iwe nyeupe isipokuwa maneno ya animated */
+}
+
+.Ujumbe.muhimu {
+    font-size: 1.1em;
     max-width: 800px;
     margin: 0 auto;
+    line-height: 1.8;
 }
 
-.blog-post-summary {
-    background: var(--card-background);
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    margin-bottom: 30px;
-    transition: box-shadow 0.3s;
+/* GRADIENT ANIMATION STYLE */
+.animated-text {
+    /* Weka gradient ya rangi tofauti */
+    background: linear-gradient(90deg, #ff5722, #ffc107, #4CAF50, #2196F3);
+    /* Fanya gradient ifanye kazi kama rangi ya maandishi */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; /* Lazimisha rangi ya maandishi iwe wazi */
+    
+    /* Weka ukubwa wa gradient */
+    background-size: 300% 100%;
+    
+    /* Anza animation */
+    animation: gradient-shift 5s ease-in-out infinite;
+    font-weight: 700;
 }
 
-.blog-post-summary:hover {
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+/* KEYFRAMES: JINSI RANGI INAVYO BADILIKA */
+@keyframes gradient-shift {
+    0% {
+        background-position: 0% 50%; /* Anzia upande wa kushoto */
+    }
+    50% {
+        background-position: 100% 50%; /* Nenda mpaka upande wa kulia */
+    }
+    100% {
+        background-position: 0% 50%; /* Rudi mwanzo tena */
+    }
 }
 
-.blog-post-summary h2 {
-    font-size: 1.6em;
-    margin-top: 0;
-}
-
-.blog-post-summary h2 a {
-    color: var(--secondary-color);
-    transition: color 0.3s;
-}
-
-.blog-post-summary h2 a:hover {
-    color: var(--primary-color);
-}
-
-.post-meta {
-    font-size: 0.9em;
-    color: #757575;
-    margin-bottom: 15px;
-    font-style: italic;
-}
-
-.read-more {
-    font-weight: 600;
-    color: var(--primary-color);
-    display: inline-block;
-    margin-top: 10px;
-}
-
-/*
- * BLOG POST DETAIL (UKURASA WA MAKALA MOJA - post-1.html)
- */
-.blog-post-detail {
-    max-width: 800px;
-    margin: 40px auto;
-    background: var(--card-background);
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    text-align: left;
-}
-
-.blog-post-detail h1 {
-    font-size: 2.5em;
-    color: var(--secondary-color);
-    margin-bottom: 5px;
-}
-
-.blog-post-detail h2 {
-    color: var(--primary-color);
-    font-size: 1.8em;
-    margin: 30px 0 15px;
-    border-bottom: 1px solid #e0e0e0;
-    padding-bottom: 5px;
-}
-
-.blog-post-detail p {
-    margin-bottom: 20px;
-}
-
-/* Kiungo cha kurudi nyuma */
-.blog-post-detail > a {
-    display: inline-block;
-    margin-bottom: 20px;
-    font-weight: 600;
-    color: #616161;
-}
 
 /*
  * MOBILE RESPONSIVENESS (MEDIA QUERIES) - Fanya iwe Mobile Friendly
@@ -575,15 +615,75 @@ hr {
         margin-top: 20px;
     }
 
-    /* MOBILE ADJUSTMENTS for Blog */
-    .blog-section h1 {
-        font-size: 2em;
+    /* PROJECT STATS FIX FOR MOBILE */
+    .project-stats {
+        flex-direction: column;
+        align-items: stretch;
     }
-    .blog-post-detail {
-        padding: 25px;
-        margin: 20px auto;
+    .stat-item {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border-right: none;
+        border-bottom: 1px solid #f0f0f0;
+        padding: 12px 0;
     }
-    .blog-post-detail h1 {
-        font-size: 1.8em;
+    .stat-item:last-child {
+        border-bottom: none;
+    }
+    .stat-item i {
+        margin-right: 10px;
+    }
+    .stat-item span {
+        text-align: left;
+    }
+    .stat-item b {
+        text-align: right;
+    }
+
+}
+/* ======================================= */
+/* MAREKEBISHO KWA AJILI YA PC/DESKTOP */
+/* Huweka Picha/Video na Maelezo Pembeni kwa Pembeni */
+/* ======================================= */
+
+@media (min-width: 1024px) {
+    /* Kuboresha muundo wa jumla wa kontena */
+    .container {
+        width: 90%;
+        max-width: 1200px; 
+    }
+    
+    /* Kurekebisha jinsi miradi inavyopangwa kwenye skrini kubwa */
+    .project-card {
+        display: flex; /* Huweka picha na maelezo pembeni kwa pembeni */
+        align-items: flex-start; /* Huweka vitu vianze juu */
+        gap: 30px; /* Nafasi kati ya picha na maelezo */
+        margin-bottom: 40px;
+        padding: 30px; 
+    }
+
+    /* Kurekebisha upana wa kontena la Picha/Video */
+    .project-image-container {
+        flex: 0 0 40%; /* Inachukua 40% ya upana wa project-card */
+        max-width: 40%;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); 
+        overflow: hidden; 
+        height: 350px; /* Weka urefu maalum kwa PC ili picha zifanane */
+    }
+    
+    /* Kuhakikisha picha na video zinachukua nafasi kamili */
+    .project-img, .project-video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    /* Kurekebisha timu iwe na nafasi kwenye PC */
+    .team-grid {
+        display: flex;
+        justify-content: space-around;
+        gap: 30px;
     }
 }
